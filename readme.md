@@ -75,14 +75,14 @@ This project includes the code for managing customer information through an API.
    - Authorization: [Jwt Token]
    - Description: Gets a paginated, sorted, and searchable list of customers.
   
-1st Page ( **Login Page**)
+1. ( **Login Page**)
 ![image](LogIn.PNG)
 
-2nd Page (**Add customer page**)
-![image](AddCustomer.PNG)
-
-3rd Page (**home page (customer details)**)
+2. (**Customers Page**)
 ![image](Customers.PNG)
+
+3. (**Add Customer Page**)
+![image](AddCustomer.PNG)
 
 ### Second Part
 
