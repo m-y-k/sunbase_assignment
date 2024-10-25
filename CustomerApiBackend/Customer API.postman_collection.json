@@ -9,16 +9,80 @@
 		{
 			"name": "Create A Customer",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXNmQGdtYWlsLmNvbSIsImlhdCI6MTcyOTgzNDM1MywiZXhwIjoxNzI5ODM2MTUzfQ.mngvUDmtTBlyyJGU2wOimrci9rCwdpKmtMSW2BWKX9A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"first_name\": \"Yusuf\", \r\n\"last_name\": \"Khan\", \r\n\"street\": \"Elvnu Street\", \r\n\"address\": \"H no 2 \",\r\n\"city\": \"\",\r\n\"state\": \"Delhi\",\r\n\"email\": \"yusuf@gmail.com\", \r\n\"phone\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"create"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Update customer",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXNmQGdtYWlsLmNvbSIsImlhdCI6MTcyOTgzNDM1MywiZXhwIjoxNzI5ODM2MTUzfQ.mngvUDmtTBlyyJGU2wOimrci9rCwdpKmtMSW2BWKX9A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"first_name\": \"Jane\", \r\n\"last_name\": \"Doe\", \r\n\"street\": \"Elvnu Street\", \r\n\"address\": \"H no 2 \",\r\n\"city\": \"\",\r\n\"state\": \"Delhi\",\r\n\"email\": \"arham@gmail.com\", \r\n\"phone\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/update/id/400",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"update",
+						"id",
+						"400"
+					]
+				}
 			},
 			"response": []
 		},
@@ -29,12 +93,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXNmQGdtYWlsLmNvbSIsImlhdCI6MTcyODQ4NzE1MCwiZXhwIjoxNzI4NDg4OTUwfQ.t2HinRyzkIJrh_9zEUy31sj4asY3_lVCY6sqcerJJVg",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk4NDA1MjAsImV4cCI6MTcyOTg0MjMyMH0.Fog5YpE8eKHaB-fZuHJ4-xcQPXM5EZ9XEjbEtPcCdJE",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/customer/get/id/160",
+					"raw": "http://localhost:8080/customer/get/id/399",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -44,7 +108,7 @@
 						"customer",
 						"get",
 						"id",
-						"160"
+						"399"
 					]
 				}
 			},
@@ -58,7 +122,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXNmQGdtYWlsLmNvbSIsImlhdCI6MTcyODQwODM4OSwiZXhwIjoxNzI4NDEwMTg5fQ._z-IBJBxhPGvkci--Lohtcl-u3U2CGu_ziGvDVkB6Fg",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk4NDA1MjAsImV4cCI6MTcyOTg0MjMyMH0.Fog5YpE8eKHaB-fZuHJ4-xcQPXM5EZ9XEjbEtPcCdJE",
 							"type": "string"
 						}
 					]
@@ -66,7 +130,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/customer/delete/id/3",
+					"raw": "http://localhost:8080/customer/delete/id/400",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -76,7 +140,7 @@
 						"customer",
 						"delete",
 						"id",
-						"3"
+						"400"
 					]
 				}
 			},
@@ -85,37 +149,155 @@
 		{
 			"name": "List of Customers",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk4NDc1MTksImV4cCI6MTcyOTg0OTMxOX0.fAx5_f6DLkvL0q8YcM30wgUSJAbhW_1ZuzefFBMeMsQ",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/get/list-of-customers?itemsPerPage=3&currentPage=1&sortBy=id&sortOrder=asc&searchBy=first_name&searchTerm=h",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"get",
+						"list-of-customers"
+					],
+					"query": [
+						{
+							"key": "itemsPerPage",
+							"value": "3"
+						},
+						{
+							"key": "currentPage",
+							"value": "1"
+						},
+						{
+							"key": "sortBy",
+							"value": "id"
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc"
+						},
+						{
+							"key": "searchBy",
+							"value": "first_name"
+						},
+						{
+							"key": "searchTerm",
+							"value": "h"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Sunbase Login",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"login_id\" : \"test@sunbasedata.com\", \"password\" :\"Test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qa.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp",
+					"protocol": "https",
+					"host": [
+						"qa",
+						"sunbasedata",
+						"com"
+					],
+					"path": [
+						"sunbase",
+						"portal",
+						"api",
+						"assignment_auth.jsp"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Add User",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\" : \"123\",\r\n    \"email\" : \"Yusf@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/addNewUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"addNewUser"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Login User / Generate Jwt Token",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\" : \"123\",\r\n    \"username\" : \"Yusuf@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/generateToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"generateToken"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Sunbase Data List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -131,22 +313,44 @@
 				"header": [
 					{
 						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk4NDc1MTksImV4cCI6MTcyOTg0OTMxOX0.fAx5_f6DLkvL0q8YcM30wgUSJAbhW_1ZuzefFBMeMsQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
 						"value": "Bearer dGVzdEBzdW5iYXNlZGF0YS5jb206VGVzdEAxMjM=",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/customer/get/customers/sunbase",
-					"protocol": "http",
+					"raw": "https://qa.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"qa",
+						"sunbasedata",
+						"com"
 					],
-					"port": "8080",
 					"path": [
-						"customer",
-						"get",
-						"customers",
-						"sunbase"
+						"sunbase",
+						"portal",
+						"api",
+						"assignment.jsp"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "get_customer_list"
+						}
 					]
 				}
 			},
