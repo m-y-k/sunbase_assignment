@@ -1,5 +1,7 @@
 # SunBase Assignment Backend  
 
+This project includes the code for managing customer information through an API. The main goal is to create functionality for adding, viewing, updating, and deleting customer data (CRUD operations). Later, the focus will shift to synchronizing this customer data with an external API to keep it consistent and accurate across systems.
+
 ## All APIs are mentioned below and API json file is also attached with Backend repository.
 
 ### First Part
