@@ -76,13 +76,13 @@ This project includes the code for managing customer information through an API.
    - Description: Gets a paginated, sorted, and searchable list of customers.
   
 1st Page ( **Login Page**)
-![image](LogIn.png)
+![image](LogIn.PNG)
 
 2nd Page (**Add customer page**)
-![image](AddCustomer.png)
+![image](AddCustomer.PNG)
 
 3rd Page (**home page (customer details)**)
-![image](Customers.png)
+![image](Customers.PNG)
 
 ### Second Part
 
