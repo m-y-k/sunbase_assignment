@@ -97,7 +97,7 @@ async function syncCustomers() {
     });
     if (responseLogIn.ok) {
       console.log(responseLogIn)
-      alert("token successfully fetched from sunbase!!! ");
+      alert("token successfully fetched from sunbase!!! ", responseLogIn);
       getDataFromSunbase();
     }
   } catch (error) {

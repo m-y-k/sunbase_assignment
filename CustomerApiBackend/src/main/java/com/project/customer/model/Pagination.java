@@ -12,7 +12,7 @@ public class Pagination {
     String  sortOrder = "";
     String  search  =  "" ;
     String  searchBy  =  "";
-    int  currentPage = 0;   // default 1 from frontEnd
-    int  itemsPerPage = 0;  // default 5 from frontEnd
+    int  currentPage = 1;   // default 1 from frontEnd
+    int  itemsPerPage = 5;  // default 5 from frontEnd
 
 }

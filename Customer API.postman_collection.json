@@ -89,11 +89,21 @@
 		{
 			"name": "Get by Id",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk5MzE2NjIsImV4cCI6MTcyOTkzMzQ2Mn0.iSYXRH8OLFQBYGua8ylApBHJXogX9LRC05CqRrHYKv4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk4NDA1MjAsImV4cCI6MTcyOTg0MjMyMH0.Fog5YpE8eKHaB-fZuHJ4-xcQPXM5EZ9XEjbEtPcCdJE",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk5MzE2NjIsImV4cCI6MTcyOTkzMzQ2Mn0.iSYXRH8OLFQBYGua8ylApBHJXogX9LRC05CqRrHYKv4",
 						"type": "text"
 					}
 				],
@@ -154,7 +164,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk4NDc1MTksImV4cCI6MTcyOTg0OTMxOX0.fAx5_f6DLkvL0q8YcM30wgUSJAbhW_1ZuzefFBMeMsQ",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk5MzE2NjIsImV4cCI6MTcyOTkzMzQ2Mn0.iSYXRH8OLFQBYGua8ylApBHJXogX9LRC05CqRrHYKv4",
 							"type": "string"
 						}
 					]
@@ -206,6 +216,16 @@
 		{
 			"name": "Sunbase Login",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk5MzE2NjIsImV4cCI6MTcyOTkzMzQ2Mn0.iSYXRH8OLFQBYGua8ylApBHJXogX9LRC05CqRrHYKv4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -218,18 +238,17 @@
 					}
 				},
 				"url": {
-					"raw": "https://qa.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp",
-					"protocol": "https",
+					"raw": "http://localhost:8080/customer/get/token/sunbase",
+					"protocol": "http",
 					"host": [
-						"qa",
-						"sunbasedata",
-						"com"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
-						"sunbase",
-						"portal",
-						"api",
-						"assignment_auth.jsp"
+						"customer",
+						"get",
+						"token",
+						"sunbase"
 					]
 				}
 			},
@@ -300,14 +319,7 @@
 			},
 			"request": {
 				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "dGVzdEBzdW5iYXNlZGF0YS5jb206VGVzdEAxMjM=",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [
@@ -320,7 +332,8 @@
 					{
 						"key": "Authorization",
 						"value": "Bearer dGVzdEBzdW5iYXNlZGF0YS5jb206VGVzdEAxMjM=",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
@@ -333,23 +346,28 @@
 					}
 				},
 				"url": {
-					"raw": "https://qa.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list",
-					"protocol": "https",
+					"raw": "http://localhost:8080/customer/get/customers/sunbase",
+					"protocol": "http",
 					"host": [
-						"qa",
-						"sunbasedata",
-						"com"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
-						"sunbase",
-						"portal",
-						"api",
-						"assignment.jsp"
+						"customer",
+						"get",
+						"customers",
+						"sunbase"
 					],
 					"query": [
 						{
-							"key": "cmd",
-							"value": "get_customer_list"
+							"key": "currentPage",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "itemsPerPage",
+							"value": "5",
+							"disabled": true
 						}
 					]
 				}

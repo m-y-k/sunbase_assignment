@@ -23,7 +23,7 @@ This project includes the code for managing customer information through an API.
                 "username" : "Yusuf@gmail.com"
             }
    - Description: Logs in a User, if credentials are matched. And returns a Jwt Token for further Api calls.
-   - Response: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZdXN1ZkBnbWFpbC5jb20iLCJpYXQiOjE3Mjk4NDA1MjAsImV4cCI6MTcyOTg0MjMyMH0.Fog5YpE8eKHaB-fZuHJ4-xcQPXM5EZ9XEjbEtPcCdJE
+   - Response: Jwt Token.
 
 2. **Create Customer**
    - Path: `http://localhost:8080/customer/create`
@@ -75,13 +75,13 @@ This project includes the code for managing customer information through an API.
    - Authorization: [Jwt Token]
    - Description: Gets a paginated, sorted, and searchable list of customers.
   
-1. ( **Login Page**)
+- ( **Login Page**)
 ![image](LogIn.PNG)
 
-2. (**Customers Page**)
+- (**Customers Page**)
 ![image](Customers.PNG)
 
-3. (**Add Customer Page**)
+- (**Add Customer Page**)
 ![image](AddCustomer.PNG)
 
 ### Second Part
@@ -95,9 +95,28 @@ In the second part, Synchronize feature is added:
     The retrieved customers are then saved in the database. 
     If a customer already exists in the database, its information is updated instead of inserting a new record. 
     
-  
+  - This sync functionality will be done by 2 API calls as follows :
 
-### Setup 
+7. ***Token from SunBase***
+   - Path: `http://localhost:8080/customer/get/token/sunbase`
+   - Method: POST
+   - Authorization: [Jwt Token]
+   - Body: {
+           "login_id" : "test@sunbasedata.com", "password" :"Test@123"
+           }
+   - Description: Gets User logIn in the Sunbase database, sets Token in Spring application and returns the token.
+   - Response: dGVzdEBzdW5iYXNlZGF0YS5jb206VGVzdEAxMjM=
+   ****Note : Without calling this Api, the 2nd one will not work becuase it requires token in that call which is being set during 1st Api call.(other wise you can hardcode it in 'tokenFromSunbase')****
+
+8. ***Get Customers from SunBase***
+   - Path: `http://localhost:8080/customer/get/customers/sunbase`
+   - Method: GET
+   - Authorization: [Jwt Token]
+   - Description: Gets Users list from the Sunbase database and saves or updates records in local database.
+   - Response: List of Customers.
+
+
+### How to run ? 
 
 - Clone both Frontend and Backend repositories.
 - Set up Application properties in **application.properties** file.
